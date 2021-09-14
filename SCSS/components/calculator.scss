@@ -6,7 +6,11 @@
 }
 
 
+// p {
+//   overflow-wrap: break-word;
+//   width:400px
 
+// }
 
 .calculator {
   display: flex;
@@ -21,16 +25,20 @@
     justify-content: space-between;
     height: 70vh;
     width: 400px;
-    background-color: white;
-    border-radius: 30px;
+    background-color: transparent;
+    box-shadow: black;
+    border: 5px solid white;
+    border-radius: 10px;
   }
 
+  
   &__screen {
     height: 100px;
     text-align: right;
     font-size: 80px;
     padding-right: 10px;
     border-radius: 10px;
+    background-color:#80b5ea;
   
   }
 

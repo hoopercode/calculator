@@ -17,8 +17,7 @@ button {
 }
 
 button:hover {
-  background: linear-gradient(to bottom, #80b5ea 5%, #bddbfa 100%);
-  background-color: #80b5ea;
+  background: linear-gradient(to bottom, #44c767 5%, #205205 100%);
 }
 
 button:active {
@@ -28,7 +27,7 @@ button:active {
 
 .calculator__operator {
   box-shadow: inset 0px 0px 0px 0px #dcecfb;
-  background: linear-gradient(to bottom, #ed3434 5%, #d10266 100%);
+  background: linear-gradient(to bottom, #44c767 5%, #205205 100%);
   background-color: #bddbfa;
   border-radius: 6px;
   border: 1px solid #84bbf3;
@@ -99,8 +98,10 @@ button:active {
   justify-content: space-between;
   height: 70vh;
   width: 400px;
-  background-color: white;
-  border-radius: 30px;
+  background-color: transparent;
+  box-shadow: black;
+  border: 5px solid white;
+  border-radius: 10px;
 }
 .calculator__screen {
   height: 100px;
@@ -108,6 +109,7 @@ button:active {
   font-size: 80px;
   padding-right: 10px;
   border-radius: 10px;
+  background-color: #80b5ea;
 }
 .calculator__previous {
   font-size: 40px;
@@ -182,7 +184,8 @@ button:active {
 }
 
 body {
-  background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+  background-color: #182b3a;
+  background-image: linear-gradient(315deg, #7ed6df 0%, #20a4f3 74%);
   background-position: unset;
   height: 120vh;
 }

@@ -1,101 +1,73 @@
-class Calculator {
-  constructor(previousOperandTextElement, currentOperandTextElement) {
-    this.previousOperandTextElement = previousOperandTextElement
-    this.currentOperandTextElement = currentOperandTextElement
-    this.clear()
-}
-
-clear() {
-
-    this.currentOperand = ''
-    this.previousOperand = ''
-    this.operation = undefined
-
-}
-
-delete() {
-}
-
-appendNumber(number) {
-  if (number === '.' && this.currentOperand.includes('.')) return
-  this.currentOperand = this.currentOperand.toString() + number.toString()
-}
-
-chooseOperation(operation) {
-    if (this.currentOperand === '') return
-    if (this.previousOperand !== '') {
-      this.compute()
-    }
-    this.operation = operation
-    this.previousOperand = this.currentOperand
-    this.currentOperand = ''
-  }
-
-
-compute() {
-  let computation
-    const prev = parseFloat(this.previousOperand)
-    const current = parseFloat(this.currentOperand)
-    if (isNaN(prev) || isNaN(current)) return
-    switch (this.operation) {
-      case '+':
-        computation = prev + current
-        break
-      case '-':
-        computation = prev - current
-        break
-      case '*':
-        computation = (prev*current)
-        break
-      case '÷':
-        computation = prev / current
-        break
-      default:
-        return
-    }
-    this.currentOperand = computation
-    this.operation = undefined
-    this.previousOperand = ''
-  
-}
-
-updateDisplay() {
-  this.currentOperandTextElement.innerText = this.currentOperand
-}
-
-}
-
 const numberButtons = document.querySelectorAll('[data-number')
-const operationButtons = document.querySelectorAll('[data-operation]')
+const addButton = document.querySelector('[data-add]')
+const subButton = document.querySelector('[data-sub]')
+const divideButton = document.querySelector('[data-divide]')
+const multiplyButton = document.querySelector('[data-multiply]')
 const equalsButton = document.querySelector('[data-equals]')
 const deleteButton = document.querySelector('[data-backspace]')
 const allClearButton = document.querySelector('[data-all-clear]')
-const previousOperandTextElement = document.querySelector('[data-previous-display]')
-const currentOperandTextElement = document.querySelector('[data-current-display]')
+const calcDisplay= document.querySelector('[data-current-display]')
 
 
-const calculator = new Calculator(previousOperandTextElement, currentOperandTextElement)
+//Numbers to match with
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, '.'];
 
+//Start with blank sum
+let sum = [];
+
+//Trying to get numbers to show in the screen -- FINALLY WORKING
 numberButtons.forEach(button => {
   button.addEventListener('click', () => {
-    calculator.appendNumber(button.innerText)
-    calculator.updateDisplay()
-  })
+      numbers.forEach(number => {
+          if (number == button.dataset.number) {
+          calcDisplay.innerHTML += number;
+          } 
+      });
+  });
+});
+
+// CLEAR DISPLAY FUNCTIOn
+
+allClearButton.addEventListener('click', () => {
+  const clear = () => {
+      calcDisplay.innerHTML = "";
+      sum = [];
+  }
+  clear();
+});
+
+//ADDING FUNCTION
+addButton.addEventListener('click', () => {
+  sum = `${calcDisplay.innerHTML}`;
+  calcDisplay.innerHTML = '+';
+});
+
+// DIVIDE FUNCTION
+divideButton.addEventListener('click', () => {
+  sum = `${calcDisplay.innerHTML}`;
+  calcDisplay.innerHTML = '/';
+});
+
+// MULTIPLY FUNCTION
+multiplyButton.addEventListener('click', () => {
+  sum = `${calcDisplay.innerHTML}`;
+  calcDisplay.innerHTML = '*';
+});
+
+// MINUS FUNCTION
+subButton.addEventListener('click', () => {
+  sum = `${calcDisplay.innerHTML}`;
+  calcDisplay.innerHTML = '-';
+});
+
+// EQUALS FUNCTION
+
+equalsButton.addEventListener('click', () => {
+  sum += `${calcDisplay.innerHTML}`;
+  const finalSumString= eval(sum) + '';
+  calcDisplay.innerHTML = finalSumString;
 })
 
-operationButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    calculator.chooseOperation(button.innerText)
-    calculator.updateDisplay()
-  })
-})
 
-equalsButton.addEventListener('click', button => {
-  calculator.compute()
-  calculator.updateDisplay()
-})
 
-allClearButton.addEventListener('click', button => {
-  calculator.clear()
-  calculator.updateDisplay()
-})
+
