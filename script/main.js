@@ -68,6 +68,13 @@ equalsButton.addEventListener('click', () => {
   calcDisplay.innerHTML = finalSumString;
 })
 
+// BACKSPACE FUNCTION
+
+deleteButton.addEventListener('click', () => {
+  const newAmount = calcDisplay.slice(0, -1);
+  calcDisplay.innerHTML = newAmount;
+})
+
 
 
 
