@@ -1,12 +1,5 @@
 /* Colour Palette */
-.calculator {
-  height: 100vh;
-  width: 50vw;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.container__button {
+button {
   box-shadow: inset 0px 0px 0px 0px #dcecfb;
   background: linear-gradient(to bottom, #bddbfa 5%, #80b5ea 100%);
   background-color: #bddbfa;
@@ -23,12 +16,66 @@
   text-shadow: 0px 1px 0px #528ecc;
 }
 
-.container__button:hover {
+button:hover {
   background: linear-gradient(to bottom, #80b5ea 5%, #bddbfa 100%);
   background-color: #80b5ea;
 }
 
-.container__button:active {
+button:active {
+  position: relative;
+  top: 1px;
+}
+
+.calculator__operator {
+  box-shadow: inset 0px 0px 0px 0px #dcecfb;
+  background: linear-gradient(to bottom, #ed3434 5%, #d10266 100%);
+  background-color: #bddbfa;
+  border-radius: 6px;
+  border: 1px solid #84bbf3;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 20px 10px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #528ecc;
+}
+
+.calculator__operator:hover {
+  background: linear-gradient(to bottom, #80b5ea 5%, #bddbfa 100%);
+  background-color: #80b5ea;
+}
+
+.calculator__operator:active {
+  position: relative;
+  top: 1px;
+}
+
+.calculator__ac, .calculator__equals {
+  box-shadow: inset 0px 0px 0px 0px #dcecfb;
+  background: linear-gradient(to bottom, #44c767 5%, #205205 100%);
+  background-color: #bddbfa;
+  border-radius: 6px;
+  border: 1px solid #84bbf3;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 20px 10px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #528ecc;
+}
+
+.calculator__ac:hover {
+  background: linear-gradient(to bottom, #80b5ea 5%, #bddbfa 100%);
+  background-color: #80b5ea;
+}
+
+.calculator__ac:active {
   position: relative;
   top: 1px;
 }
@@ -38,10 +85,6 @@
   padding: 0;
   box-sizing: border-box;
   font-family: Verdana, Geneva, Tahoma, sans-serif, sans-serif;
-}
-
-body {
-  background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
 }
 
 .calculator {
@@ -133,6 +176,12 @@ body {
 }
 .calculator #return {
   grid-area: 5/4/6/5;
+}
+
+body {
+  background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+  background-position: unset;
+  height: 120vh;
 }
 
 h1 {

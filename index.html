@@ -14,38 +14,43 @@
   <main class ="calculator">
       <div class="calculator__container">
         <div class="calculator__screen">
-          <p class="calculator__display">0+0</p>
+          <p data-current-display class="calculator__display"></p>
         </div>
         <div class="calculator__numbers">
           <!-- Top Row Buttons -->
-          <button class="container__button" id="allClear">AC</button>
-          <button class="container__button" id="divide">/</button>
+          <button data-all-clear class="calculator__ac" id="allClear" >AC</button>
+          <button data-operation class="calculator__operator" id="divide">/</button>
           <!-- Second Row Buttons -->
-          <button class="container__button" id="seven">7</button>
-          <button class="container__button" id="eight">8</button>
-          <button class="container__button" id="nine">9</button>
-          <button class="container__button" id="multiply">x</button>
+          <button data-number class="calculator__button" id="seven">7</button>
+          <button data-number class="calculator__button" id="eight">8</button>
+          <button data-number class="calculator__button" id="nine">9</button>
+          <button data-operation class="calculator__operator" id="multiply">x</button>
           <!-- Third Row Buttons -->
-          <button class="container__button" id="four">4</button>
-          <button class="container__button" id="five">5</button>
-          <button class="container__button" id="six">6</button>
-          <button class="container__button" id="add">+</button> 
+          <button data-number class="calculator__button" id="four">4</button>
+          <button data-number class="calculator__button" id="five">5</button>
+          <button data-number class="calculator__button" id="six">6</button>
+          <button data-operation class="calculator__operator" id="add" >+</button> 
           <!-- Third Row Buttons -->
-          <button class="container__button" id="one">1</button>
-          <button class="container__button" id="two">2</button>
-          <button class="container__button" id="three">3</button>
-          <button class="container__button" id="subtract">-</button>
+          <button data-number class="calculator__button" id="one">1</button>
+          <button data-number class="calculator__button" id="two">2</button>
+          <button data-number class="calculator__button" id="three">3</button>
+          <button data-operation class="calculator__operator" id="subtract">-</button>
           <!-- Fourth Row Buttons -->
-          <button class="container__button" id="decimal">.</button>
-          <button class="container__button" id="zero">0</button>
-          <button class="container__button" id="backspace"><</button>
-          <button class="container__button" id="return">=</button>
+          <button data-number class="calculator__button" id="decimal">.</button>
+          <button data-number class="calculator__decimal" id="zero">0</button>
+          <button data-backspace class="calculator__backspace" id="backspace"><</button>
+          <button data-equals class="calculator__equals" id="return">=</button>
           <!-- Fift Row Buttons -->
         </div>
       </div>
     </div>
 
   </main>
-  <script src="./script/main.js" type="javascript" asyn defer></script>
+  <footer>
+    <br>
+    <br>
+    <br>
+  </footer>
+  <script src="./script/main.js"></script>
 </body>
 </html>
