@@ -14,17 +14,18 @@
   <main class ="calculator">
       <div class="calculator__container">
         <div class="calculator__screen">
-          <p data-current-display class="calculator__display"></p>
+          <div data-previous-display class="calculator__previous">0</div>
+          <div data-current-display class="calculator__current">0</div>
         </div>
         <div class="calculator__numbers">
           <!-- Top Row Buttons -->
-          <button data-all-clear class="calculator__ac" id="allClear" >AC</button>
-          <button data-operation class="calculator__operator" id="divide">/</button>
+          <button data-all-clear class="calculator__ac" id="allClear">AC</button>
+          <button data-operation class="calculator__operator" id="divide">÷</button>
           <!-- Second Row Buttons -->
           <button data-number class="calculator__button" id="seven">7</button>
           <button data-number class="calculator__button" id="eight">8</button>
           <button data-number class="calculator__button" id="nine">9</button>
-          <button data-operation class="calculator__operator" id="multiply">x</button>
+          <button data-operation class="calculator__operator" id="multiply">*</button>
           <!-- Third Row Buttons -->
           <button data-number class="calculator__button" id="four">4</button>
           <button data-number class="calculator__button" id="five">5</button>

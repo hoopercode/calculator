@@ -102,13 +102,16 @@ button:active {
   background-color: white;
   border-radius: 30px;
 }
-.calculator__display {
+.calculator__screen {
   height: 100px;
   text-align: right;
   font-size: 80px;
   padding-right: 10px;
-  background-color: lightgray;
   border-radius: 10px;
+}
+.calculator__previous {
+  font-size: 40px;
+  padding-right: 10px;
 }
 .calculator__numbers {
   display: grid;
