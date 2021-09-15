@@ -9,10 +9,10 @@ const allClearButton = document.querySelector('[data-all-clear]')
 const calcDisplay= document.querySelector('[data-current-display]')
 
 
-//Numbers to match with
+//Numbers to match with when allocating numbers
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, '.'];
 
-//Start with blank sum
+//Start with blank sum - Need 
 let sum = [];
 
 //Trying to get numbers to show in the screen -- FINALLY WORKING
@@ -24,7 +24,7 @@ numberButtons.forEach(button => {
           } 
       });
   });
-});
+}); 
 
 // CLEAR DISPLAY FUNCTIOn
 

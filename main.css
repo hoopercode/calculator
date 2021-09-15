@@ -104,16 +104,18 @@ button:active {
   border-radius: 10px;
 }
 .calculator__screen {
+  display: flex;
+  justify-content: right;
+  align-items: center;
   height: 100px;
-  text-align: right;
   font-size: 80px;
   padding-right: 10px;
   border-radius: 10px;
   background-color: #80b5ea;
 }
-.calculator__previous {
-  font-size: 40px;
-  padding-right: 10px;
+.calculator__screen p {
+  word-break: break-all;
+  flex-wrap: wrap;
 }
 .calculator__numbers {
   display: grid;
