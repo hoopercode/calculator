@@ -25,10 +25,10 @@
     justify-content: space-between;
     height: 500px;
     width: 400px;
-    background-color: transparent;
     box-shadow: black;
-    border: 5px solid white;
+    border: 5px solid rgba(0,0,0,0.5);
     border-radius: 10px;
+    background: rgba(0, 0, 0, 0.2);
   }
 
   
@@ -37,22 +37,30 @@
     align-items: flex-end;
     flex-direction: column;
     height: 100px;
+    width: 350px;
     padding-right: 10px;
     border-radius: 10px;
     background-color:#80b5ea;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
   
   &__previous {
     font-size: 30px;
+    
   }
   
   &__current {
     font-size: 50px;
+    text-overflow: ellipsis;
+    
   }
   &__screen p {
     word-break: break-all;
     flex-wrap: wrap;
     color: white;
+    
   
   }
 
@@ -105,9 +113,9 @@
 
   #zero { grid-area: 5 / 2 / 6 / 3; }
 
-  #backspace { grid-area: 5 / 3 / 6 / 4; }
+  
 
-  #return{ grid-area: 5 / 4 / 6 / 5; }
+  #return{ grid-area: 5 / 3 / 6 / 5; }
 
   }
 

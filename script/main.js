@@ -15,6 +15,10 @@ const operatorButtons = document.querySelectorAll('[data-operator]')
 //Numbers to match with when allocating numbers
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, '.'];
 
+
+// const operators = ["+","-","*","/"]; -- No Longer Required but will keep because lazy
+
+
 //Start with blank sum - Need 
 let sum = [];
 
@@ -28,8 +32,6 @@ numberButtons.forEach(button => {
       });
   });
 }); 
-//Trying to get numbers to show in the PREVIOUS DISPLAY -- NOT WORKING
- 
 
 // CLEAR DISPLAY FUNCTIOn
 
@@ -74,17 +76,15 @@ subButton.addEventListener('click', () => {
 // EQUALS FUNCTION
 
 equalsButton.addEventListener('click', () => {
+  if (calcDisplay.innerHTML == "") {
+    calcDisplay.innerHTML = "";
+    } 
+  else {  
   sum += `${calcDisplay.innerHTML}`;
   prevDisplay.innerHTML = `${prevDisplay.innerHTML}${calcDisplay.innerHTML}=`;
   const finalSumString= eval(sum) + '';
   calcDisplay.innerHTML = finalSumString;
-})
-
-// BACKSPACE FUNCTION
-
-deleteButton.addEventListener('click', () => {
-  const newAmount = calcDisplay.slice(0, -1);
-  calcDisplay.innerHTML = newAmount;
+  }
 })
 
 
