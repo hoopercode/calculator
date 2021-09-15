@@ -7,6 +7,9 @@ const equalsButton = document.querySelector('[data-equals]')
 const deleteButton = document.querySelector('[data-backspace]')
 const allClearButton = document.querySelector('[data-all-clear]')
 const calcDisplay= document.querySelector('[data-current-display]')
+const prevDisplay = document.querySelector('[data-previous-display]')
+const operatorButtons = document.querySelectorAll('[data-operator]')
+
 
 
 //Numbers to match with when allocating numbers
@@ -25,12 +28,15 @@ numberButtons.forEach(button => {
       });
   });
 }); 
+//Trying to get numbers to show in the PREVIOUS DISPLAY -- NOT WORKING
+ 
 
 // CLEAR DISPLAY FUNCTIOn
 
 allClearButton.addEventListener('click', () => {
   const clear = () => {
       calcDisplay.innerHTML = "";
+      prevDisplay.innerHTML = "";
       sum = [];
   }
   clear();
@@ -39,24 +45,29 @@ allClearButton.addEventListener('click', () => {
 //ADDING FUNCTION
 addButton.addEventListener('click', () => {
   sum = `${calcDisplay.innerHTML}`;
+  prevDisplay.innerHTML = `${calcDisplay.innerHTML}`;
   calcDisplay.innerHTML = '+';
+  
 });
 
 // DIVIDE FUNCTION
 divideButton.addEventListener('click', () => {
   sum = `${calcDisplay.innerHTML}`;
+  prevDisplay.innerHTML = `${calcDisplay.innerHTML}`;
   calcDisplay.innerHTML = '/';
 });
 
 // MULTIPLY FUNCTION
 multiplyButton.addEventListener('click', () => {
   sum = `${calcDisplay.innerHTML}`;
+  prevDisplay.innerHTML = `${calcDisplay.innerHTML}`;
   calcDisplay.innerHTML = '*';
 });
 
 // MINUS FUNCTION
 subButton.addEventListener('click', () => {
   sum = `${calcDisplay.innerHTML}`;
+  prevDisplay.innerHTML = `${calcDisplay.innerHTML}`;
   calcDisplay.innerHTML = '-';
 });
 
@@ -64,6 +75,7 @@ subButton.addEventListener('click', () => {
 
 equalsButton.addEventListener('click', () => {
   sum += `${calcDisplay.innerHTML}`;
+  prevDisplay.innerHTML = `${prevDisplay.innerHTML}${calcDisplay.innerHTML}=`;
   const finalSumString= eval(sum) + '';
   calcDisplay.innerHTML = finalSumString;
 })

@@ -12,32 +12,33 @@
   <main class ="calculator">
       <div class="calculator__container">
         <div class="calculator__screen">
+          <p data-previous-display class="calculator__previous"></p>
           <p data-current-display class="calculator__current"></p>
         </div>
         <div class="calculator__numbers">
           <!-- Top Row Buttons -->
           <button data-all-clear class="calculator__ac" id="allClear">AC</button>
-          <button data-divide class="calculator__operator" id="divide">÷</button>
+          <button data-divide data-operator class="calculator__operator" id="divide">÷</button>
           <!-- Second Row Buttons -->
           <button data-number="7" class="calculator__button" id="seven">7</button>
           <button data-number="8"  class="calculator__button" id="eight">8</button>
           <button data-number="9"  class="calculator__button" id="nine">9</button>
-          <button data-multiply class="calculator__operator" id="multiply">*</button>
+          <button data-multiply data-operator class="calculator__operator" id="multiply">*</button>
           <!-- Third Row Buttons -->
           <button data-number="4"  class="calculator__button" id="four">4</button>
           <button data-number="5"  class="calculator__button" id="five">5</button>
           <button data-number="6"  class="calculator__button" id="six">6</button>
-          <button data-add class="calculator__operator" id="add" >+</button> 
+          <button data-add data-operator class="calculator__operator" id="add" >+</button> 
           <!-- Third Row Buttons -->
           <button data-number="1"  class="calculator__button" id="one">1</button>
           <button data-number="2"  class="calculator__button" id="two">2</button>
           <button data-number="3"  class="calculator__button" id="three">3</button>
-          <button data-sub class="calculator__operator" id="subtract">-</button>
+          <button data-sub data-operator class="calculator__operator" id="subtract">-</button>
           <!-- Fourth Row Buttons -->
           <button data-number="."  class="calculator__button" id="decimal">.</button>
           <button data-number="0"  class="calculator__decimal" id="zero">0</button>
           <button data-backspace class="calculator__backspace" id="backspace"><</button>
-          <button data-equals class="calculator__equals" id="return">=</button>
+          <button data-equals data-operator class="calculator__equals" id="return">=</button>
           <!-- Fift Row Buttons -->
         </div>
       </div>
