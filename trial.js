@@ -5,7 +5,10 @@ const lastSum = parseInt(prevDisplay.innerHTML)
   const lastSum = prevDisplay.innerHTML
   const operator = calcDisplay.innerHTML.charAt(0)
   const newSum = calcDisplay.innerHTML
-equalsButton.addEventListener('click', () => {
+
+
+
+  equalsButton.addEventListener('click', () => {
   if (calcDisplay.innerHTML == "") {
     calcDisplay.innerHTML = "";
     } 

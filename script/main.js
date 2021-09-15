@@ -49,6 +49,7 @@ addButton.addEventListener('click', () => {
   sum = `${calcDisplay.innerHTML}`;
   prevDisplay.innerHTML = `${calcDisplay.innerHTML}`;
   calcDisplay.innerHTML = '+';
+  let operator = "+"
   
 });
 
@@ -57,13 +58,17 @@ divideButton.addEventListener('click', () => {
   sum = `${calcDisplay.innerHTML}`;
   prevDisplay.innerHTML = `${calcDisplay.innerHTML}`;
   calcDisplay.innerHTML = '/';
+  
 });
+
+
 
 // MULTIPLY FUNCTION
 multiplyButton.addEventListener('click', () => {
   sum = `${calcDisplay.innerHTML}`;
   prevDisplay.innerHTML = `${calcDisplay.innerHTML}`;
   calcDisplay.innerHTML = '*';
+  let operator = "*"
 });
 
 // MINUS FUNCTION
@@ -71,6 +76,7 @@ subButton.addEventListener('click', () => {
   sum = `${calcDisplay.innerHTML}`;
   prevDisplay.innerHTML = `${calcDisplay.innerHTML}`;
   calcDisplay.innerHTML = '-';
+  let operator = "-"
 });
 
 
@@ -80,21 +86,25 @@ subButton.addEventListener('click', () => {
   const newSum = calcDisplay.innerHTML
 
 equalsButton.addEventListener("click", () => {
-  if (calcDisplay.innerHTML) {
-    calcDisplay.innerHTML = calculate(prevDisplay.innerHTML, calcDisplay.innerHTML)
-    prevDisplay.innerHTML = "";
+  if (prevDisplay.innerHTML) {
+    prevDisplay.innerHTML = `${prevDisplay.innerHTML}${calcDisplay.innerHTML}=`
+    console.log(prevDisplay.innerHTML)
+    console.log(typeof prevDisplay.innerHTML)
+
+    calcDisplay.innerHTML = calculate(prevDisplay.innerHTML,calcDisplay.innerHTML)
+    
   }
 });
 
 const calculate = (lastSum, newSum) => {
-  if (calcDisplay.innerHTML.charAt(0) === "+") {
+  if (calcDisplay.innerHTML.includes("+")) {
     return (parseFloat(lastSum) + parseFloat(newSum))
   } else if (prevDisplay.innerHTML.charAt(0) === "-") {
     return (parseFloat(lastSum) - parseFloat(newSum)); //--
-  } else if (prevDisplay.innerHTML.charAt(0) === "*") {
-    return (parseFloat(lastSum) * parseFloat(newSum));
-  } else if (prevDisplay.innerHTML.charAt(0) === "*") {
-    return (parseFloat(lastSum) / parseFloat(newSum));
+  } else if (prevDisplay.innerHTML.includes("*")) {
+    return (parseFloat(lastSum)*parseFloat(newSum));
+  } else if (prevDisplay.innerHTML.charAt(0) === "/") {
+    return (parseFloat(lastSum)/parseFloat(newSum));
   } else {
     return (parseFloat(lastSum) + parseFloat(newSum))
   }
