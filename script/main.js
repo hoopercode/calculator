@@ -73,20 +73,29 @@ subButton.addEventListener('click', () => {
   calcDisplay.innerHTML = '-';
 });
 
+
 // EQUALS FUNCTION
+  const lastSum = prevDisplay.innerHTML
+  const operator = calcDisplay.innerHTML.charAt(0)
+  const newSum = calcDisplay.innerHTML
 
-equalsButton.addEventListener('click', () => {
-  if (calcDisplay.innerHTML == "") {
-    calcDisplay.innerHTML = "";
-    } 
-  else {  
-  sum += `${calcDisplay.innerHTML}`;
-  prevDisplay.innerHTML = `${prevDisplay.innerHTML}${calcDisplay.innerHTML}=`;
-  const finalSumString= eval(sum) + '';
-  calcDisplay.innerHTML = finalSumString;
+equalsButton.addEventListener("click", () => {
+  if (calcDisplay.innerHTML) {
+    calcDisplay.innerHTML = calculate(prevDisplay.innerHTML, calcDisplay.innerHTML)
+    prevDisplay.innerHTML = "";
   }
-})
+});
 
-
-
-
+const calculate = (lastSum, newSum) => {
+  if (calcDisplay.innerHTML.charAt(0) === "+") {
+    return (parseFloat(lastSum) + parseFloat(newSum))
+  } else if (prevDisplay.innerHTML.charAt(0) === "-") {
+    return (parseFloat(lastSum) - parseFloat(newSum)); //--
+  } else if (prevDisplay.innerHTML.charAt(0) === "*") {
+    return (parseFloat(lastSum) * parseFloat(newSum));
+  } else if (prevDisplay.innerHTML.charAt(0) === "*") {
+    return (parseFloat(lastSum) / parseFloat(newSum));
+  } else {
+    return (parseFloat(lastSum) + parseFloat(newSum))
+  }
+};
