@@ -1,3 +1,12 @@
+//This has been a JS Project that was completed in Week 4 of a 12 Week Intro to Software Development course with _nology.
+
+//The requirements were:
+
+  //Accept a minimum of 2 inputs, perform an operation and return the output. 
+  //DO NOT USE THE eval() function as this is extremely dangerous.
+  
+//----------------------------------------------------------------------------------------//
+
 //Psuedo Code//
 //All buttons allocated to queryselector or elementsbyID
 

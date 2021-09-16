@@ -55,7 +55,6 @@ button:active {
 .calculator__ac, .calculator__equals {
   box-shadow: inset 0px 0px 0px 0px #dcecfb;
   background: linear-gradient(to bottom, #44c767 5%, #205205 100%);
-  background-color: #bddbfa;
   border-radius: 6px;
   border: 1px solid #84bbf3;
   display: inline-block;
