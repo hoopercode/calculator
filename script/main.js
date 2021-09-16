@@ -9,9 +9,12 @@
 
 // Operation buttons will also have an event listener on them that picks up when someone pushes them they will do a function
 
-// Equals button is going to need to pick up which number buttons have previously been pushed, which operator has been pushed and which current number has been pushed and put them all together but NOT using eval.
+// Equals button is going to need to pick up which number buttons have previously been pushed, which operator has been pushed and which current number has been pushed and put them all together but NOT using eval.  I imgaine I will do this by storing the first value entered before the operator is pushed as a variable and use it later and use basic JS maths to put it all together at the end.  
 
-//
+
+//Issues I see happening? Isolating the operator is going to be an issue.
+
+
 
 const numberButtons = document.querySelectorAll('[data-number')
 const addButton = document.querySelector('[data-add]')
@@ -66,7 +69,7 @@ addButton.addEventListener('click', () => {
   
 });
 
-// DIVIDE FUNCTION
+// DIVIDE FUNCTION - Event Listener
 divideButton.addEventListener('click', () => {
   sum = `${calcDisplay.innerHTML}`;
   prevDisplay.innerHTML = `${calcDisplay.innerHTML}`;
@@ -76,7 +79,7 @@ divideButton.addEventListener('click', () => {
 
 
 
-// MULTIPLY FUNCTION
+// MULTIPLY FUNCTION - Event Listener
 multiplyButton.addEventListener('click', () => {
   sum = `${calcDisplay.innerHTML}`;
   prevDisplay.innerHTML = `${calcDisplay.innerHTML}`;
@@ -84,7 +87,7 @@ multiplyButton.addEventListener('click', () => {
   operator.push("*")
 });
 
-// MINUS FUNCTION
+// MINUS FUNCTION - Event Listener
 subButton.addEventListener('click', () => {
   sum = `${calcDisplay.innerHTML}`;
   prevDisplay.innerHTML = `${calcDisplay.innerHTML}`;
@@ -94,16 +97,17 @@ subButton.addEventListener('click', () => {
 });
 
 
-// EQUALS FUNCTION
+// EQUALS FUNCTION - Event Listener
 
 equalsButton.addEventListener("click", () => {
   if (prevDisplay.innerHTML) {
     prevDisplay.innerHTML = `${prevDisplay.innerHTML}${calcDisplay.innerHTML}=`
-
     calcDisplay.innerHTML = calculate(sum,calcDisplay.innerHTML.substring(1))
+    
     
   }
 });
+// CALCULATE FUNCTION - To be used alongside equals listener
 
 const calculate = (lastSum, newSum) => {
   if (operator.toString() === "+") {
