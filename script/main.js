@@ -1,3 +1,18 @@
+//Psuedo Code//
+//All buttons allocated to queryselector or elementsbyID
+
+//Number buttons need to display on a screen which will be it's own div.
+
+//Screen should probably have a small and large display area for current and previous calculations
+
+//Number buttons will have an event listener on them that picks up when someone pushes them they will do a function
+
+// Operation buttons will also have an event listener on them that picks up when someone pushes them they will do a function
+
+// Equals button is going to need to pick up which number buttons have previously been pushed, which operator has been pushed and which current number has been pushed and put them all together but NOT using eval.
+
+//
+
 const numberButtons = document.querySelectorAll('[data-number')
 const addButton = document.querySelector('[data-add]')
 const subButton = document.querySelector('[data-sub]')
@@ -15,14 +30,11 @@ const operatorButtons = document.querySelectorAll('[data-operator]')
 //Numbers to match with when allocating numbers
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, '.'];
 
-
-// const operators = ["+","-","*","/"]; -- No Longer Required but will keep because lazy
-
-
 //Start with blank sum - Need 
-let sum = [];
+let sum = []; // Use this to keep track of sums
+let operator = []; //Use this to isolate the operator as an array to use later
 
-//Trying to get numbers to show in the screen -- FINALLY WORKING
+//Number Button - Event Listener
 numberButtons.forEach(button => {
   button.addEventListener('click', () => {
       numbers.forEach(number => {
@@ -33,23 +45,24 @@ numberButtons.forEach(button => {
   });
 }); 
 
-// CLEAR DISPLAY FUNCTIOn
+// CLEAR DISPLAY  - Event Listener
 
 allClearButton.addEventListener('click', () => {
   const clear = () => {
       calcDisplay.innerHTML = "";
       prevDisplay.innerHTML = "";
       sum = [];
+      operator = [];
   }
   clear();
 });
 
-//ADDING FUNCTION
+//ADDING FUNCTION  - Event Listener
 addButton.addEventListener('click', () => {
   sum = `${calcDisplay.innerHTML}`;
   prevDisplay.innerHTML = `${calcDisplay.innerHTML}`;
   calcDisplay.innerHTML = '+';
-  let operator = "+"
+  operator.push("+");
   
 });
 
@@ -58,7 +71,7 @@ divideButton.addEventListener('click', () => {
   sum = `${calcDisplay.innerHTML}`;
   prevDisplay.innerHTML = `${calcDisplay.innerHTML}`;
   calcDisplay.innerHTML = '/';
-  
+  operator.push("/")
 });
 
 
@@ -68,7 +81,7 @@ multiplyButton.addEventListener('click', () => {
   sum = `${calcDisplay.innerHTML}`;
   prevDisplay.innerHTML = `${calcDisplay.innerHTML}`;
   calcDisplay.innerHTML = '*';
-  let operator = "*"
+  operator.push("*")
 });
 
 // MINUS FUNCTION
@@ -76,20 +89,17 @@ subButton.addEventListener('click', () => {
   sum = `${calcDisplay.innerHTML}`;
   prevDisplay.innerHTML = `${calcDisplay.innerHTML}`;
   calcDisplay.innerHTML = '-';
-  let operator = "-"
+  operator.push("-")
+  console.log(operator.toString())
+  
 });
 
 
 // EQUALS FUNCTION
-  const lastSum = prevDisplay.innerHTML
-  const operator = calcDisplay.innerHTML.charAt(0)
-  const newSum = calcDisplay.innerHTML
 
 equalsButton.addEventListener("click", () => {
   if (prevDisplay.innerHTML) {
     prevDisplay.innerHTML = `${prevDisplay.innerHTML}${calcDisplay.innerHTML}=`
-    console.log(prevDisplay.innerHTML)
-    console.log(typeof prevDisplay.innerHTML)
 
     calcDisplay.innerHTML = calculate(prevDisplay.innerHTML,calcDisplay.innerHTML)
     
@@ -97,15 +107,16 @@ equalsButton.addEventListener("click", () => {
 });
 
 const calculate = (lastSum, newSum) => {
-  if (calcDisplay.innerHTML.includes("+")) {
+  if (operator.toString() === "+") {
     return (parseFloat(lastSum) + parseFloat(newSum))
-  } else if (prevDisplay.innerHTML.charAt(0) === "-") {
-    return (parseFloat(lastSum) - parseFloat(newSum)); //--
-  } else if (prevDisplay.innerHTML.includes("*")) {
-    return (parseFloat(lastSum)*parseFloat(newSum));
-  } else if (prevDisplay.innerHTML.charAt(0) === "/") {
-    return (parseFloat(lastSum)/parseFloat(newSum));
+  } else if (operator.toString() === "-") {
+    return (parseFloat(lastSum) - parseFloat(newSum)); 
+  } else if (operator.toString() === "*") {
+    return (parseFloat(lastSum) * parseFloat(newSum));
+  } else if (operator.toString() === "/") {
+    return (parseFloat(lastSum) / parseFloat(newSum));
   } else {
     return (parseFloat(lastSum) + parseFloat(newSum))
   }
 };
+
