@@ -90,7 +90,6 @@ subButton.addEventListener('click', () => {
   prevDisplay.innerHTML = `${calcDisplay.innerHTML}`;
   calcDisplay.innerHTML = '-';
   operator.push("-")
-  console.log(operator.toString())
   
 });
 
@@ -101,7 +100,7 @@ equalsButton.addEventListener("click", () => {
   if (prevDisplay.innerHTML) {
     prevDisplay.innerHTML = `${prevDisplay.innerHTML}${calcDisplay.innerHTML}=`
 
-    calcDisplay.innerHTML = calculate(prevDisplay.innerHTML,calcDisplay.innerHTML)
+    calcDisplay.innerHTML = calculate(sum,calcDisplay.innerHTML.substring(1))
     
   }
 });
