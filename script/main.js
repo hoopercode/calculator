@@ -88,11 +88,11 @@ equalsButton.addEventListener("click", () => {
     calcDisplay.innerHTML = calculate(sum,calcDisplay.innerHTML.substring(1))
     // setTimeout(doSomething, 5000);
 
-
-
-    
   }
 });
+
+//Functions
+
 // CALCULATE FUNCTION - To be used alongside equals listener
 const calculate = (lastSum, newSum) => {
   if (operator.toString() === "+") {
