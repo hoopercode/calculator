@@ -1,5 +1,8 @@
 //This has been a JS Project that was completed in Week 4 of a 12 Week Intro to Software Development course with _nology.
 
+//It has been tested with Cypress (END TO END TESTING)
+//"https://docs.cypress.io/guides/getting-started/installing-cypress" see for details on how to complete end-to-end testing on this project once it has been cloned down.
+
 //The requirements were:
 
   //Accept a minimum of 2 inputs, perform an operation and return the output. 
