@@ -1,0 +1,24 @@
+{
+  "name": "calculator-project",
+  "version": "1.0.0",
+  "description": "//This has been a JS Project that was completed in Week 4 of a 12 Week Intro to Software Development course with _nology.",
+  "main": "trial.js",
+  "dependencies": {},
+  "devDependencies": {
+    "cypress": "^8.4.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hoopercode/calculator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hoopercode/calculator/issues"
+  },
+  "homepage": "https://github.com/hoopercode/calculator#readme"
+}
